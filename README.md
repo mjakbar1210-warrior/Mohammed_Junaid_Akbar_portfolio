@@ -33,22 +33,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Set admin credentials
-
-Windows PowerShell:
-```powershell
-$env:ADMIN_USERNAME="junaid"
-$env:ADMIN_PASSWORD="YOUR_STRONG_PASSWORD"
-$env:SECRET_KEY="YOUR_LONG_RANDOM_SECRET"
-```
-
-Linux/macOS:
-```bash
-export ADMIN_USERNAME="junaid"
-export ADMIN_PASSWORD="YOUR_STRONG_PASSWORD"
-export SECRET_KEY="YOUR_LONG_RANDOM_SECRET"
-```
-
 ### 4. Start
 ```bash
 python app.py
