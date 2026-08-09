@@ -1,0 +1,7 @@
+portfolio.db
+.env
+__pycache__/
+*.pyc
+static/uploads/projects/*
+!static/uploads/projects/.gitkeep
+venv/

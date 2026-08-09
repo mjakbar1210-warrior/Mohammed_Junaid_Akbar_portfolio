@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mohammed Junaid Akbar | Robotics Engineer</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<header class="nav"><a class="brand" href="/">JUNAID<b>.</b></a><nav class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a><a href="#projects">Projects</a><a href="#about">About</a><a href="{{ github }}" target="_blank">GitHub ↗</a><a href="{{ linkedin }}" target="_blank">LinkedIn ↗</a></nav><a class="nav-btn" href="#projects">EXPLORE BUILDS</a></header>
+<section class="hero"><div><div class="eyebrow">COMPUTER SCIENCE • AI/ML • ROBOTICS</div><h1>Engineering robots that <span>think & move.</span></h1><p>I'm Mohammed Junaid Akbar — focused on robotics, autonomous systems, AI and practical engineering. This portfolio is connected to a private admin system so I can add and update projects directly.</p><div class="actions"><a class="btn primary" href="#projects">VIEW PROJECTS →</a><a class="btn" href="{{ github }}" target="_blank">GITHUB ↗</a></div></div><img class="hero-photo" src="{{ url_for('static', filename='profile.png') }}" alt="Mohammed Junaid Akbar"></section>
+<section id="about" class="section"><div class="head"><span class="num">01</span><div><div class="eyebrow">ABOUT</div><h2>Software meets <span>machines.</span></h2></div></div><p style="max-width:800px;color:#8497a3;font-size:18px;line-height:1.8">I build projects across robotics, embedded systems, CNC, AI/ML and software. My direction is robotics engineering with growing focus on ROS 2, perception, control, simulation and autonomous systems.</p></section>
+
+<section id="skills" class="section alt">
+  <div class="head"><span class="num">02</span><div><div class="eyebrow">TECHNICAL STACK</div><h2>Tools I <span>build with.</span></h2></div></div>
+  <div class="info-grid">
+    <div class="info-card"><b>C++</b><p>OOP, algorithms, data structures and robotics programming.</p><div class="bar"><i style="width:82%"></i></div></div>
+    <div class="info-card"><b>Python</b><p>AI/ML, automation, computer vision and backend development.</p><div class="bar"><i style="width:86%"></i></div></div>
+    <div class="info-card"><b>ROS 2</b><p>Robotics middleware, nodes, topics, services and autonomous systems.</p><div class="bar"><i style="width:70%"></i></div></div>
+    <div class="info-card"><b>Gazebo</b><p>Robot simulation, sensors and testing workflows.</p><div class="bar"><i style="width:65%"></i></div></div>
+    <div class="info-card"><b>OpenCV</b><p>Computer vision and image-processing foundations.</p><div class="bar"><i style="width:72%"></i></div></div>
+    <div class="info-card"><b>Embedded</b><p>Arduino, sensors, motor drivers, CNC and prototyping.</p><div class="bar"><i style="width:80%"></i></div></div>
+  </div>
+  <div class="chips"><span>Git</span><span>VS Code</span><span>Django</span><span>MySQL</span><span>Arduino</span><span>GRBL</span><span>3D Printing</span><span>Machine Learning</span></div>
+</section>
+
+<section id="services" class="section">
+  <div class="head"><span class="num">03</span><div><div class="eyebrow">WHAT I BUILD</div><h2>Engineering <span>services.</span></h2></div></div>
+  <div class="service-grid">
+    <div class="info-card"><small>01</small><h3>Robotics Prototyping</h3><p>Autonomous robots, sensors, motor control and Arduino prototypes.</p></div>
+    <div class="info-card"><small>02</small><h3>3D Modelling & Printing</h3><p>Prototype parts, enclosures and functional robotics components.</p></div>
+    <div class="info-card"><small>03</small><h3>AI / ML Applications</h3><p>Python AI, NLP, computer vision and practical ML systems.</p></div>
+    <div class="info-card"><small>04</small><h3>CNC & Embedded</h3><p>Motion control, stepper motors, GRBL and embedded electronics.</p></div>
+  </div>
+</section>
+
+<section id="projects" class="section projects"><div class="head"><span class="num">02</span><div><div class="eyebrow">SELECTED BUILDS</div><h2>Projects from <span>code to hardware.</span></h2></div></div>
+<div class="grid">
+{% for p in projects %}
+<article class="card"><div class="card-img">{% if p['image'] %}<img src="{{ url_for('static', filename='uploads/projects/' + p['image']) }}" alt="{{ p['title'] }}">{% else %}<div style="font:700 12px JetBrains Mono;color:#45e8ff">PROJECT // {{ "%02d"|format(p['id']) }}</div>{% endif %}</div><div class="card-body"><div class="meta"><span>{{ p['category'] }}</span><span>{{ p['year'] }}</span></div><h3>{{ p['title'] }}</h3><p>{{ p['description'] }}</p><div class="tags">{% for t in p['technologies'].split(',') if t.strip() %}<span class="tag">{{ t.strip() }}</span>{% endfor %}</div>{% if p['github'] %}<a class="github" href="{{ p['github'] }}" target="_blank">VIEW GITHUB ↗</a>{% endif %}</div></article>
+{% endfor %}
+</div></section>
+
+<section id="journey" class="section alt">
+  <div class="head"><span class="num">05</span><div><div class="eyebrow">ENGINEERING JOURNEY</div><h2>Learning toward <span>robotics.</span></h2></div></div>
+  <div class="timeline">
+    <div><b>01 — Computer Science + AI/ML</b><p>Programming, algorithms, AI and software engineering foundations.</p></div>
+    <div><b>02 — Hardware & Prototyping</b><p>Arduino, sensors, motor drivers, CNC and 3D printing.</p></div>
+    <div><b>03 — Robotics Software</b><p>C++, ROS 2, Gazebo, OpenCV and autonomous systems.</p></div>
+    <div><b>04 — Next: Autonomous Robots</b><p>Perception, localization, planning, control and robot integration.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="contact-box">
+    <div><div class="eyebrow">LET'S CONNECT</div><h2>Have a robotics idea?</h2><p>Interested in robotics projects, internships, collaboration and real-world intelligent systems.</p></div>
+    <div class="actions"><a class="btn" href="{{ linkedin }}" target="_blank">LINKEDIN ↗</a><a class="btn" href="{{ github }}" target="_blank">GITHUB ↗</a></div>
+  </div>
+</section>
+
+<footer><span>© {{ 2026 }} Mohammed Junaid Akbar</span><span>ROBOTICS / AI / SOFTWARE</span></footer>
+</body></html>
