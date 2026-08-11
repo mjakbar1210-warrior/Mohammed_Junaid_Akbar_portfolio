@@ -3,7 +3,9 @@ import sqlite3
 from pathlib import Path
 from functools import wraps
 from flask import Flask, render_template, request, redirect, url_for, session, flash, abort
+
 from werkzeug.utils import secure_filename
+
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "portfolio.db"
